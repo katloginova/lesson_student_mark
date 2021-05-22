@@ -22,14 +22,14 @@ const students = [{
     }
 ];
 
-const PROPERTYMARKS = 'marks';
-const PROPERTYNAME = 'name';
-
+// const PROPERTYMARKS = 'marks';
+// const PROPERTYNAME = 'name';
 
 const groupMark = averageGroupMark(students);
 
+
 students.forEach((item) => {
-    console.log(`${item[PROPERTYNAME]}: ${averageStudentMark(item)} points`);
+    console.log(`${item.name}: ${averageStudentMark(item)} points`);
 });
 
 console.log(`Group: ${groupMark} points`);
@@ -45,18 +45,13 @@ function calcAverageValue(array) {
 }
 
 function averageStudentMark(person) {
-    let marksArray = [];
-    marksArray = person[PROPERTYMARKS];
-
-    const averageMark = calcAverageValue(marksArray);
-
-    return averageMark;
+    return calcAverageValue(person.marks);
 }
 
 function averageGroupMark(persons) {
     let marksArray = [];
 
-    marksArray = persons.map((person) => person[PROPERTYMARKS]);
+    marksArray = persons.map((person) => person.marks);
     marksArray = marksArray.join().split(',');
 
     return calcAverageValue(marksArray);
