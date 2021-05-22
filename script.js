@@ -22,11 +22,8 @@ const students = [{
     }
 ];
 
-// const PROPERTYMARKS = 'marks';
-// const PROPERTYNAME = 'name';
 
 const groupMark = averageGroupMark(students);
-
 
 students.forEach((item) => {
     console.log(`${item.name}: ${averageStudentMark(item)} points`);
